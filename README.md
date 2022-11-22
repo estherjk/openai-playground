@@ -4,7 +4,7 @@ My personal OpenAI playground.
 
 ## Tech Stack
 
-- [OpenAI GPT-3](https://beta.openai.com/docs/models/gpt-3): Models that can understand & generate natural language
+- [OpenAI](https://beta.openai.com/overview): Language models that can generate text, images, & even code
 - [Next.js + TypeScript](https://github.com/estherjk/next-ts-template)
 - [Chakra UI](https://chakra-ui.com/): React component library
 
