@@ -1,4 +1,5 @@
-import { Flex, Heading, Text } from '@chakra-ui/react';
+import { Flex, Heading, List, ListItem, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 
 import { BaseLayout } from '@src/layouts';
 
@@ -10,6 +11,13 @@ const IndexPage = () => {
       <Flex flexDirection={'column'} alignItems={'center'}>
         <Heading mt={32}>{title}</Heading>
         <Text fontSize={'2xl'}>Playing with the OpenAI APIs</Text>
+        <List mt={8}>
+          <ListItem>
+            <Link href="/playground/text">
+              <Text textDecoration={'underline'}>Text Completions</Text>
+            </Link>
+          </ListItem>
+        </List>
       </Flex>
     </BaseLayout>
   );
