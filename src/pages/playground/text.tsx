@@ -1,6 +1,6 @@
 import { Box, Flex, Heading } from '@chakra-ui/react';
 
-import { Prompt } from '@src/components';
+import { TextPrompt } from '@src/components';
 import { BaseLayout } from '@src/layouts';
 
 const TextPage = () => {
@@ -11,7 +11,7 @@ const TextPage = () => {
       <Flex flexDirection={'column'} alignItems={'center'}>
         <Heading mt={32}>{title}</Heading>
         <Box my={8} w={'100%'}>
-          <Prompt />
+          <TextPrompt />
         </Box>
       </Flex>
     </BaseLayout>
