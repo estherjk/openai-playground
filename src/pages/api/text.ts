@@ -12,7 +12,7 @@ const openai = new OpenAIApi(configuration);
 // See: https://stackoverflow.com/a/69895731
 interface Request extends NextApiRequest {
   body: {
-    keywords: string;
+    text: string;
   };
 }
 
@@ -21,11 +21,10 @@ type Data = {
   result?: string;
 };
 
-// TODO: Generalize this... hard-coding inputs to start
 export default async function handler(req: Request, res: NextApiResponse<Data>) {
   const completion = await openai.createCompletion({
     model: 'text-davinci-002',
-    prompt: generatePrompt(req.body.keywords),
+    prompt: req.body.text,
     temperature: 0.6,
     max_tokens: 150,
     top_p: 1,
@@ -34,10 +33,4 @@ export default async function handler(req: Request, res: NextApiResponse<Data>) 
   });
 
   res.status(200).json({ result: completion.data.choices[0].text });
-}
-
-function generatePrompt(keywords: string) {
-  return `Create a greeting based on the following keywords.
-  Keywords: ${keywords}
-  `;
 }
