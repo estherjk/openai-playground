@@ -23,7 +23,7 @@ type Data = {
 
 export default async function handler(req: Request, res: NextApiResponse<Data>) {
   const completion = await openai.createCompletion({
-    model: 'text-davinci-002',
+    model: 'text-davinci-003',
     prompt: req.body.text,
     temperature: 0.6,
     max_tokens: 150,
